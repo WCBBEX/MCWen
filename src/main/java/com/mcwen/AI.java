@@ -1,4 +1,4 @@
-package com.mcen;
+package com.mcwen;
 
 import de.kherud.llama.InferenceParameters;
 import de.kherud.llama.LlamaModel;
@@ -27,7 +27,7 @@ public class AI {
         }
 
         this.systemPrompt =
-                "This is a conversation between a user and AI assistant.\n"+
+                "This is a conversation between a user and MCWen which is the AI assistant.\n"+
                 "AI assistant is eager to help, friendly, honest, good at writing, and always responds immediately and accurately to any request.";
 
     }

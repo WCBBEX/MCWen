@@ -1,4 +1,4 @@
-package com.mcen;
+package com.mcwen;
 
 import com.mojang.brigadier.arguments.StringArgumentType;
 import net.fabricmc.api.ModInitializer;
@@ -9,11 +9,12 @@ import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.Text;
 
 
-public class MCen implements ModInitializer {
+public class MCWen implements ModInitializer {
+
+	public static AI MCWEN = new AI();
 
 	@Override
 	public void onInitialize() {
-		AI ai = new AI();
 
 		CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> {
 			dispatcher.register(CommandManager.literal("testAi")
@@ -23,12 +24,14 @@ public class MCen implements ModInitializer {
 								ServerPlayerEntity player = context.getSource().getPlayer();
 								new Thread(() -> {
 									try {
-										AI.Chat chat = ai.new Chat();
+										AI.Chat chat = MCWEN.new Chat();
 										String reply = chat.getReply(message);
 
-										player.getServer().execute(() -> {
-											player.sendMessage(Text.literal(reply), false);
-										});
+										if (player != null) {
+											player.getServer().execute(() -> {
+												player.sendMessage(Text.literal(reply), false);
+											});
+										}
 									} catch (Exception e) {
 										e.printStackTrace();
 									}

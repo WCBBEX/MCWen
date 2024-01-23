@@ -1,8 +1,8 @@
 {
 	"schemaVersion": 1,
-	"id": "mcen",
+	"id": "mcwen",
 	"version": "${version}",
-	"name": "MCen",
+	"name": "MCWen",
 	"description": "这个mod基于QWen-1.8B，提供了一套本地的ai服务。\nThis mod is based on QWen-1.8B and provides a set of local AI services.",
 	"authors": [
 		"WCBBEX"
@@ -12,15 +12,15 @@
 		"sources": "https://github.com/WCBBEX/MCen"
 	},
 	"license": "CC0-1.0",
-	"icon": "assets/mcen/icon.png",
+	"icon": "assets/mcwen/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"com.mcen.MCen"
+          "com.mcwen.MCWen"
 		]
 	},
 	"mixins": [
-		"mcen.mixins.json"
+		"mcwen.mixins.json"
 	],
 	"depends": {
 		"fabricloader": ">=0.11.0",
